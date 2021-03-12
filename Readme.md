@@ -1,6 +1,8 @@
 # Find relationships using set() in Python
 Shoppee Challenge Code Challenge 2021 - Multichannel Contacts
 
+https://www.kaggle.com/c/shopee-code-league-2021
+
 To determind if there is a relationship between to entity, we use intersection of 2 sets:
 
 ![Intersection of two sets](set.jpg "Intersection of two sets")
@@ -50,7 +52,13 @@ B_related = [A,B,C,D]
 C_related = [A,B,C,D]  
 D_related = [A,B,C,D]
 
+### Check for similar relationship map too!
+There are cases after A visited K and M, they would hold [A, K, M].  When K's turn come to visit the others down the list, it will meet M and there is no need to proceed since they already hold the same relatioship map.
+So, check for null intersection and also check if they hold the same relationship map.
+
 ## Caveat in running the code
 It is not optimised!  So running it will take a long time.  
 Set the nrow value and subset the data accordingly.  e.g.  nrow =1000 and then subset the data to get rows 0-999 will run the code over first 1000 rows to see what the output looks like.  It should contains only paired relationships.  It is possible to find multiple relationship if nrow ~ 10,000
+
+## Make sure your computer is set to 'Never Sleep' when plugged in
 
