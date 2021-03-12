@@ -60,5 +60,6 @@ So, check for null intersection and also check if they hold the same relationshi
 It is not optimised!  So running it will take a long time.  
 Set the nrow value and subset the data accordingly.  e.g.  nrow =1000 and then subset the data to get rows 0-999 will run the code over first 1000 rows to see what the output looks like.  It should contains only paired relationships.  It is possible to find multiple relationship if nrow ~ 10,000
 
-## Make sure your computer is set to 'Never Sleep' when plugged in
+** Set computer's power profile to 'Never Sleep When Plugged In'**
+Or execution will stop when you walked away.
 
