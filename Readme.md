@@ -47,7 +47,7 @@ C_related = [A,B,C]
 The new relationship list should contain [A,B,C,D] for all (A,B,C,D):
 A_related = [A,B,C,D]  
 B_related = [A,B,C,D]  
-C_related = [A,B,C,D]
+C_related = [A,B,C,D]  
 D_related = [A,B,C,D]
 
 ## Caveat in running the code
