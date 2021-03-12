@@ -32,19 +32,19 @@ A_related = [A,B]
 B_related = [A,B]
 
 ### Next, with B, going down the list and found C.  
-The relationship list should add this new relationship and looks like:
+The relationship list should add this new relationship and looks like:  
 B_related = [A,B, B,C]  
 To make the list unique and sort we do: sorted(set(B_related))
 
 B_related = [A,B,C]
 
-This may not be optimised, but I went with updating all the members (A,B and C) with the newly created list and updated the relationship status. So now:
+This may not be optimised, but I went with updating all the members (A,B and C) with the newly created list and updated the relationship status. So now:  
 A_related = [A,B,C]  
 B_related = [A,B,C]  
 C_related = [A,B,C]
 
 ### Now, with C, going down the list and found D
-The new relationship list should contain [A,B,C,D] for all (A,B,C,D):
+The new relationship list should contain [A,B,C,D] for all members in A,B,C and D:  
 A_related = [A,B,C,D]  
 B_related = [A,B,C,D]  
 C_related = [A,B,C,D]  
