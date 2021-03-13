@@ -69,13 +69,18 @@ First key is 'Email1', get the value to cur_map = {A,B} -- iterate over A,B
 Is A in the rel_map? No -- add to rel_map
 rel_map = {'A':{A,B}}
 Is B in the rel_map? No -- add to rel_map
-rel_map = {'A':{A,B}, 'B':{A,B}}
+rel_map = {'B':{A,B}}
 
 Second key is 'Phone123', get the value to cur_map = {B,C} -- iterate  
 Is B in rel_map?  Yes, update cur_map  
-cur_map.update(rel_map['B']) -- cur_map = {B,C,A}  
+cur_map.update(rel_map['B']) --> cur_map = {B,C,A}
 Is C in rel_map? No -- add to rel_map
-rel_map = {'A':{A,B}, 'B':{A,B}, 'C':{}
+rel_map = {'A':{A,B}, 'B':{A,B}, 'C':{B,C,A}}
+with cur_map update all in the list to produce:
+rel_map = {'A':{B,C,A}, 'B':{B,C,A}, 'C':{B,C,A}}
+
+
+
 
 
 
