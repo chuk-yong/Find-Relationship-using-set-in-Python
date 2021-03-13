@@ -1,7 +1,4 @@
 # Find relationships using set() in Python
-Shoppee Challenge Code Challenge 2021 - Multichannel Contacts
-
-https://www.kaggle.com/c/shopee-code-league-2021
 
 To determind if there is a relationship between to entity, we use intersection of 2 sets:
 
@@ -15,32 +12,28 @@ b = list(B)
 c = set(a).intersection(b)  
 c is a list containing the element in the intersection.
 
-Note: In the code, check for '' as it means empty and should not be interpreted as a match.
 
-There are many caveats in dealing with Pandas dataframe that I found out (I am a R user), some of them would sound trivial to regular Pandas users but these don't make sense:
+## Building our relationship map by visiting
 
-1. Using .at[] to allocate a list to a cell.  data.iloc[] = [...] does not work.
-2. df.data[].copy to make a copy of a datframe you subset or Pandas will consider it a slice of the dataframe.  df=data.['a','b'] is a slice of data.
+### We start with A, visit everyone down the list.  Found B.
 
-## Building our relationship map
-
-Do refer to the pdf from the code challenge for details.
-
-### We start with A and found B.  
-Build a relationship map (using a list). In the code, a column was created to contain this list.
-A_related means Id=A and column = "related".  In our dataframe, Id and rows are the same.
+We can create a relationship map as follows:
 
 A_related = [A,B]  
 B_related = [A,B]
 
-### Next, with B, going down the list and found C.  
-The relationship list should add this new relationship and looks like:  
-B_related = [A,B, B,C]  
+### Next, with B, going down the list and found C.
+
+The relationship list should add this new relationship and looks like:
+
+B_related = [A,B, B,C]
+
 To make the list unique and sort we do: sorted(set(B_related))
 
 B_related = [A,B,C]
 
-This may not be optimised, but I went with updating all the members (A,B and C) with the newly created list and updated the relationship status. So now:  
+With this new found list, we should go update everyone in the list so that:
+
 A_related = [A,B,C]  
 B_related = [A,B,C]  
 C_related = [A,B,C]
@@ -51,15 +44,4 @@ A_related = [A,B,C,D]
 B_related = [A,B,C,D]  
 C_related = [A,B,C,D]  
 D_related = [A,B,C,D]
-
-### Check for similar relationship map too!
-There are cases after A visited K and M, they would hold [A, K, M].  When K's turn come to visit the others down the list, it will meet M and there is no need to proceed since they already hold the same relatioship map.
-So, check for null intersection and also check if they hold the same relationship map.
-
-## Caveat in running the code
-It is not optimised!  So running it will take a long time.  
-Set the nrow value and subset the data accordingly.  e.g.  nrow =1000 and then subset the data to get rows 0-999 will run the code over first 1000 rows to see what the output looks like.  It should contains only paired relationships.  It is possible to find multiple relationship if nrow ~ 10,000
-
-** Set computer's power profile to 'Never Sleep When Plugged In'**
-Or execution will stop when you walked away.
 
