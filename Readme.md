@@ -63,6 +63,20 @@ Next, iterate over the keys and finding the intersection of the values to extrac
 
 rel_map ={}
 
-{A,B} -- {B,C} -- set --> [A,B,C] 
+
+First key is 'Email1', get the value to cur_map = {A,B} -- iterate over A,B
+
+Is A in the rel_map? No -- add to rel_map
+rel_map = {'A':{A,B}}
+Is B in the rel_map? No -- add to rel_map
+rel_map = {'A':{A,B}, 'B':{A,B}}
+
+Second key is 'Phone123', get the value to cur_map = {B,C} -- iterate  
+Is B in rel_map?  Yes, update cur_map  
+cur_map.update(rel_map['B']) -- cur_map = {B,C,A}  
+Is C in rel_map? No -- add to rel_map
+rel_map = {'A':{A,B}, 'B':{A,B}, 'C':{}
+
+
 
 
