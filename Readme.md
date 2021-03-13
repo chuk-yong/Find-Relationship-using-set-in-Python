@@ -46,12 +46,16 @@ C_related = [A,B,C,D]
 D_related = [A,B,C,D]
 
 ## Implementation and much better ways
-My implementation of the method applying to Shoppee Code Challenge 2021: Multi-channel contacts: shoppee_walk.py
+My implementation of the method applying to Shoppee Code Challenge 2021: Multi-channel contacts: shoppee_walk.py  
+
+Do not run the code as it is very, very slow.
 
 Information about this challenge can be found at: https://www.kaggle.com/c/scl-2021-da
 
-### Using Dictionary
-Dictionary has a build-in property much like set - the keys are unique.  When you assign another value to the same key, the value will be added to the list.
+### A much much better implementation: Using Dictionary!
+As submitted yeogaa: https://www.kaggle.com/yeogaa/multi-channel-contacts-0-953-15-sec
+
+By combining set and dictinary, you can skip many of the pitfalls using list to compare and find attributes that make up a relationship.  The code showed an expert use of these properties to complete the task beautifully and swiftly.
 
 So, build a dictionary with Email, Phone and ContactId as the keys and Id as the value.  So now the starting relationship map looks like:
 
@@ -79,7 +83,12 @@ rel_map = {'A':{A,B}, 'B':{A,B}, 'C':{B,C,A}}
 with cur_map update all in the list to produce:
 rel_map = {'A':{B,C,A}, 'B':{B,C,A}, 'C':{B,C,A}}
 
+## Other takeaways
+Doing this on Python and Pandas is quite different from R.  
 
+R is purpose-built for dealing with data frames/tables.  Python is general purpose computing tool that just happens to have Pandas to deal with Data Frame.  Reading from dataframe very inefficient and also many times, when you extract or subset a row or column, it returns a completely different animals -- np array, pd series.  How to add a list to a cell?  use data.at()?! What is that?
+
+For ML tasks like data cleaning, pre-processing, transformation and statistical analysis, it is probably better to stick with R.  However, Python is so very convenient with online tools like colab, makes it so easy to work on the project from anywhere.    
 
 
 
