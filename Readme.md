@@ -10,7 +10,7 @@ a = list(A)
 b = list(B)
 
 c = set(a).intersection(b)  
-c is a list containing the element in the intersection.
+c is a list containinglemenst in the intersection.
 
 
 ## Building our relationship map by visiting
